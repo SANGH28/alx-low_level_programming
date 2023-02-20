@@ -2,7 +2,7 @@
 /**
  * main - this is the main function
  *
- * Return: returns 0 if code is successful
+ * Return: 0, if code is successful
  */
 
 int main(void)
@@ -11,18 +11,21 @@ int main(void)
 	int j;
 
 	for (i = 0 ; i <= 98 ; i++)
-	{	putchar(' ');
 	{
-		for (j = 01 ; j <= 99 ; j++)
-			if (i != j)
-			{
-				putchar(i + '0');
-				putchar(j + '0');
-				putchar(',');
-				putchar(' ');
-			}
+		for (j = i + 1 ; j <= 99 ; j++)
+		{
+			putchar((i / 2) + '0');
+			putchar((i % 10) + '0');
+			putchar(' ');
+			putchar((j / 2) + '0');
+			putchar((j % 10) + '0');
+		if (i != 98 && j != 99)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		}
 	}
-	}
-		putchar('\n');
-		return (0);
+	putchar('\n');
+	return (0);
 }
